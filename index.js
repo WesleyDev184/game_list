@@ -1,7 +1,7 @@
-let ul = document.getElementById('lista');
-let busca = document.getElementById('search');
-let select = document.getElementById('category')
-let form = document.getElementById('form')
+let ul = document.getElementById("lista");
+let busca = document.getElementById("search");
+let select = document.getElementById("category");
+let form = document.getElementById("form");
 
 const options = {
   method: "GET",
