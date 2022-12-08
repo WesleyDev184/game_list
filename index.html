@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Games List</title>
+  </head>
+  <body>
+    <div class="h-16 bg-indigo-700 flex justify-end items-center py-1.5">
+      <select
+        id="category"
+        onchange="searchCategory()"
+        class="h-full border text-sm rounded-lg block w-54 p-2.5 bg-gray-800 border-gray-700 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
+      >
+        <option selected disabled>Selecione uma Categoria</option>
+        <option value="todos">Todas</option>
+        <option value="shooter">shooter</option>
+        <option value="strategy">Strategy</option>
+        <option value="mmorpg">MMORPG</option>
+        <option value="pvp">PVP</option>
+        <option value="sports">Sports</option>
+        <option value="moba">Moba</option>
+        <option value="fighting">Fighting</option>
+        <option value="card">Card Game</option>
+        <option value="battle-royale">Battle Royale</option>
+        <option value="racing">Racing</option>
+        <option value="social">Social</option>
+      </select>
+      <form class="relative mr-4 ml-4 w-80" id="form">
+        <div
+          class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+        >
+          <svg
+            aria-hidden="true"
+            class="w-4 h-4 text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            ></path>
+          </svg>
+        </div>
+        <input
+          type="text"
+          id="search"
+          class="block w-full p-4 pl-10 text-sm text-gray-900 border rounded-lg focus:border-blue-500 bg-gray-800 border-gray-600 focus:text-white focus:ring-blue-500 focus:border-blue-500"
+          placeholder="Buscar..."
+        />
+        <button
+          type="submit"
+          class="absolute right-2.5 bottom-2.5 font-medium rounded-lg text-sm px-4 py-2 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800 text-white"
+        >
+          Search
+        </button>
+      </form>
+    </div>
+
+    <ul id="lista" class="flex gap-4 flex-wrap justify-center my-10"></ul>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
