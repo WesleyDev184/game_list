@@ -98,8 +98,8 @@ const Buscar = () => {
     if (true === isNaN(posicao)) {
       continue;
     }
-    let conteudpDalinha = li[posicao].id.toLocaleLowerCase();
-    if (true === conteudpDalinha.includes(expressao)) {
+    let conteudoDalinha = li[posicao].id.toLocaleLowerCase();
+    if (true === conteudoDalinha.includes(expressao)) {
       li[posicao].style.display = "";
     } else {
       li[posicao].style.display = "none";
