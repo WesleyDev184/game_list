@@ -5,3 +5,15 @@ div::-webkit-scrollbar {
 body {
   background-color: #161b22;
 }
+
+@media (max-width:640px) {
+  #category{
+    width: 8rem;
+  }
+  #form{
+    width: 14rem;
+  }
+  #form button{
+    width: 5rem;
+  }
+}

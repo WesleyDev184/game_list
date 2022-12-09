@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>Games List</title>
-</head>
-
-<body>
-
-  <nav class="relative px-2 py-2 flex justify-between items-center bg-indigo-700">
-    <div class="lg:hidden">
-      <button class="navbar-burger flex items-center text-gary-400 p-3">
-        <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <title>Mobile menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-        </svg>
-      </button>
-    </div>
-
-    <div class="hidden lg:inline-block lg:ml-auto lg:mr-3" style="height: 3.3rem;">
-      <select id="category" onchange="searchCategory()"
-        class="h-full border text-sm rounded-lg block w-54 p-2.5 bg-gray-800 border-gray-700 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500">
-        <option selected disabled>Selecione uma Categoria</option>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Games List</title>
+  </head>
+  <body>
+    <nav class="h-16 bg-indigo-700 flex justify-end items-center py-1.5">
+      <select
+        id="category"
+        onchange="searchCategory()"
+        class="h-full border text-sm rounded-lg block w-54 p-2.5 bg-gray-800 border-gray-700 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
+      >
+        <option selected disabled>Categorias</option>
         <option value="todos">Todas</option>
         <option value="shooter">shooter</option>
         <option value="strategy">Strategy</option>
@@ -39,86 +29,43 @@
         <option value="racing">Racing</option>
         <option value="social">Social</option>
       </select>
-    </div>
-    <form class="relative mr-4 ml-2 w-80 hidden lg:inline-block" id="form">
-      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        <svg aria-hidden="true" class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-        </svg>
-      </div>
-      <input type="text" id="search"
-        class="block w-full p-4 pl-10 text-sm text-gray-900 border rounded-lg focus:border-blue-500 bg-gray-800 border-gray-600 focus:text-white focus:ring-blue-500 focus:border-blue-500"
-        placeholder="Buscar..." />
-      <button type="submit"
-        class="absolute right-2.5 bottom-2.5 font-medium rounded-lg text-sm px-4 py-2 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800 text-white">
-        Search
-      </button>
-    </form>
-  </nav>
-  <div class="navbar-menu relative z-50 hidden">
-    <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
-    <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-indigo-700 overflow-y-auto">
-      <div class="flex items-center mb-8">
-        <button class="navbar-close">
-          <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
-            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-            </path>
+      <form class="relative mr-4 ml-4 w-80" id="form">
+        <div
+          class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+        >
+          <svg
+            aria-hidden="true"
+            class="w-4 h-4 text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            ></path>
           </svg>
+        </div>
+        <input
+          type="text"
+          id="search"
+          class="block w-full p-4 pl-10 text-sm text-gray-900 border rounded-lg focus:border-blue-500 bg-gray-800 border-gray-600 focus:text-white focus:ring-blue-500 focus:border-blue-500"
+          placeholder="Buscar..."
+        />
+        <button
+          type="submit"
+          class="absolute right-2.5 bottom-2.5 rounded-lg text-sm sm:text-xs px-4 py-2 sm:w-14 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800 text-white"
+        >
+          Search
         </button>
-      </div>
-      <div>
-        <ul>
-          <li class="mb-1">
-            <div class="block p-2">
-              <div class="relative mr-4 w-64">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                  <svg aria-hidden="true" class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                  </svg>
-                </div>
-                <input type="text" id="search_m"
-                  class="block w-full p-4 pl-10 text-sm text-gray-900 border rounded-lg focus:border-blue-500 bg-gray-800 border-gray-600 focus:text-white focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Buscar..." />
-              </div>
-            </div>
-          </li>
-          <li class="mb-1">
-            <div class="block p-2" href="#">
-              <select id="category" onchange="searchCategory()"
-                class="h-full border text-sm rounded-lg block w-64 p-2.5 bg-gray-800 border-gray-700 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500">
-                <option selected disabled>Selecione uma Categoria</option>
-                <option value="todos">Todas</option>
-                <option value="shooter">shooter</option>
-                <option value="strategy">Strategy</option>
-                <option value="mmorpg">MMORPG</option>
-                <option value="pvp">PVP</option>
-                <option value="sports">Sports</option>
-                <option value="moba">Moba</option>
-                <option value="fighting">Fighting</option>
-                <option value="card">Card Game</option>
-                <option value="battle-royale">Battle Royale</option>
-                <option value="racing">Racing</option>
-                <option value="social">Social</option>
-              </select>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <p class="my-4 text-xs text-center text-gray-400">
-        <span>Copyright © 2021</span>
-      </p>
-  </div>
-  </nav>
-  </div>
+      </form>
+    </nav>
 
-  <ul id="lista" class="flex gap-4 flex-wrap justify-center my-10"></ul>
+    <ul id="lista" class="flex gap-4 flex-wrap justify-center my-10"></ul>
 
-  <script src="./index.js"></script>
-</body>
-
+    <script src="./index.js"></script>
+  </body>
 </html>
