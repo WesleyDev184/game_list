@@ -12,9 +12,9 @@ body {
     margin-left: 1rem;
   }
   #form{
-    width: 14rem;
+    width: 10rem;
   }
   #form button{
-    width: 5rem;
+    display: none;
   }
 }
