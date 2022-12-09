@@ -2,6 +2,7 @@ let ul = document.getElementById("lista");
 let busca = document.getElementById("search");
 let select = document.getElementById("category");
 let form = document.getElementById("form");
+let busca_m = document.getElementById("search_m");
 
 const options = {
   method: "GET",
@@ -89,6 +90,10 @@ form.addEventListener("submit", (e) => {
   Buscar();
 });
 
+busca_m.addEventListener("keyup", () => {
+  Buscar();
+});
+
 const Buscar = () => {
   let expressao = busca.value.toLowerCase();
 
@@ -106,3 +111,43 @@ const Buscar = () => {
     }
   }
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  // open
+  const burger = document.querySelectorAll(".navbar-burger");
+  const menu = document.querySelectorAll(".navbar-menu");
+
+  if (burger.length && menu.length) {
+      for (var i = 0; i < burger.length; i++) {
+          burger[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                  menu[j].classList.toggle("hidden");
+              }
+          });
+      }
+  }
+
+  // close
+  const close = document.querySelectorAll(".navbar-close");
+  const backdrop = document.querySelectorAll(".navbar-backdrop");
+
+  if (close.length) {
+      for (var i = 0; i < close.length; i++) {
+          close[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                  menu[j].classList.toggle("hidden");
+              }
+          });
+      }
+  }
+
+  if (backdrop.length) {
+      for (var i = 0; i < backdrop.length; i++) {
+          backdrop[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                  menu[j].classList.toggle("hidden");
+              }
+          });
+      }
+  }
+});
