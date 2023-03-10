@@ -1,4 +1,4 @@
-<img src="https://drive.google.com/file/d/16vv07c_cQpcOCYzRgvVsfK8Ga3M15eae/view?usp=share_link" alt="Game List">
+<img src="https://drive.google.com/file/d/16vv07c_cQpcOCYzRgvVsfK8Ga3M15eae/view?usp=sharing" alt="Game List">
 
 # Games List
 
